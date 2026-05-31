@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "nslookup": "^1.1.1"
+  }
+}
