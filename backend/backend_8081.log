@@ -1,0 +1,88 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.OsGuri:TrabalhoLucas >----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.0.6:run (default-cli) > test-compile @ TrabalhoLucas >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ TrabalhoLucas ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ TrabalhoLucas ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ TrabalhoLucas ---
+[INFO] skip non existing resourceDirectory /home/Leo_Borges/Documentos/TrabalhoLucas/backend/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ TrabalhoLucas ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:4.0.6:run (default-cli) < test-compile @ TrabalhoLucas <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.0.6:run (default-cli) @ TrabalhoLucas ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.6)
+
+2026-05-31T07:08:31.309-03:00  INFO 410993 --- [TrabalhoLucas] [           main] c.O.T.TrabalhoLucasApplication           : Starting TrabalhoLucasApplication using Java 21.0.11 with PID 410993 (/home/Leo_Borges/Documentos/TrabalhoLucas/backend/target/classes started by Leo_Borges in /home/Leo_Borges/Documentos/TrabalhoLucas/backend)
+2026-05-31T07:08:31.311-03:00  INFO 410993 --- [TrabalhoLucas] [           main] c.O.T.TrabalhoLucasApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-05-31T07:08:31.842-03:00  INFO 410993 --- [TrabalhoLucas] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-31T07:08:31.877-03:00  INFO 410993 --- [TrabalhoLucas] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 4 JPA repository interfaces.
+2026-05-31T07:08:32.157-03:00  INFO 410993 --- [TrabalhoLucas] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-05-31T07:08:32.165-03:00  INFO 410993 --- [TrabalhoLucas] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-31T07:08:32.165-03:00  INFO 410993 --- [TrabalhoLucas] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-31T07:08:32.194-03:00  INFO 410993 --- [TrabalhoLucas] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 856 ms
+2026-05-31T07:08:32.291-03:00  INFO 410993 --- [TrabalhoLucas] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-31T07:08:32.312-03:00  INFO 410993 --- [TrabalhoLucas] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-31T07:08:32.545-03:00  INFO 410993 --- [TrabalhoLucas] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-31T07:08:32.567-03:00  INFO 410993 --- [TrabalhoLucas] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-31T07:08:33.053-03:00  INFO 410993 --- [TrabalhoLucas] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7438c3d5
+2026-05-31T07:08:33.054-03:00  INFO 410993 --- [TrabalhoLucas] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-31T07:08:33.211-03:00  INFO 410993 --- [TrabalhoLucas] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://aws-1-sa-east-1.pooler.supabase.com:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-31T07:08:33.810-03:00  INFO 410993 --- [TrabalhoLucas] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-31T07:08:33.923-03:00  INFO 410993 --- [TrabalhoLucas] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-31T07:08:33.965-03:00  INFO 410993 --- [TrabalhoLucas] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-31T07:08:34.342-03:00  INFO 410993 --- [TrabalhoLucas] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-05-31T07:08:34.488-03:00  WARN 410993 --- [TrabalhoLucas] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-31T07:08:34.842-03:00  INFO 410993 --- [TrabalhoLucas] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2026-05-31T07:08:34.842-03:00  INFO 410993 --- [TrabalhoLucas] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@27959922]]
+2026-05-31T07:08:34.842-03:00  INFO 410993 --- [TrabalhoLucas] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2026-05-31T07:08:34.851-03:00  INFO 410993 --- [TrabalhoLucas] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-05-31T07:08:34.855-03:00  INFO 410993 --- [TrabalhoLucas] [           main] c.O.T.TrabalhoLucasApplication           : Started TrabalhoLucasApplication in 3.774 seconds (process running for 3.94)
+Hibernate: select ue1_0.id,ue1_0.email,ue1_0.role,ue1_0.senha from tb_suusuario ue1_0 where ue1_0.email=?
+2026-05-31T07:08:35.129-03:00  WARN 410993 --- [TrabalhoLucas] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-05-31T07:08:35.130-03:00  WARN 410993 --- [TrabalhoLucas] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-05-31T07:08:44.154-03:00  INFO 410993 --- [TrabalhoLucas] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-31T07:08:44.155-03:00  INFO 410993 --- [TrabalhoLucas] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-31T07:08:44.156-03:00  INFO 410993 --- [TrabalhoLucas] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: select ue1_0.id,ue1_0.email,ue1_0.role,ue1_0.senha from tb_suusuario ue1_0 where ue1_0.email=?
+2026-05-31T07:08:44.307-03:00  INFO 410993 --- [TrabalhoLucas] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-31T07:08:44.310-03:00  INFO 410993 --- [TrabalhoLucas] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-31T07:08:44.312-03:00  INFO 410993 --- [TrabalhoLucas] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2026-05-31T07:08:44.312-03:00  INFO 410993 --- [TrabalhoLucas] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@27959922]]
+2026-05-31T07:08:44.312-03:00  INFO 410993 --- [TrabalhoLucas] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2026-05-31T07:08:44.315-03:00  INFO 410993 --- [TrabalhoLucas] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-31T07:08:44.317-03:00  INFO 410993 --- [TrabalhoLucas] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-31T07:08:45.024-03:00  INFO 410993 --- [TrabalhoLucas] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
