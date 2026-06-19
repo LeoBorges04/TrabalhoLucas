@@ -9,20 +9,21 @@ Este projeto foi desenvolvido como requisito avaliativo para a disciplina de Tec
 O backend foi construído usando as seguintes tecnologias:
 
 - **Java 21**
-- **Spring Boot 3** (Web, Data JPA)
+- **Spring Boot 3** (Web, Data JPA, Security, WebSockets)
 - **PostgreSQL** (Banco de dados relacional via Supabase)
+- **Autenticação JWT** (JSON Web Tokens para rotas seguras)
 - **Lombok** (Para reduzir boilerplate de getters, setters, etc.)
 - **Supabase CLI** (Para criação e controle de migrações locais e remotas)
 - **Maven** (Gerenciamento de dependências e build)
 
-## 🗂 Estrutura do Sistema
+## 🗂 Estrutura do Sistema e Funcionalidades
 
-O sistema é focado em 4 entidades principais:
+O sistema é focado em entidades principais (Pacientes, Especialidades, Profissionais e Atendimentos) e conta com as seguintes features avançadas:
 
-- **Pacientes**: Informações detalhadas de pacientes como nome, CPF, data de nascimento, endereço, convênio, e número da carteirinha.
-- **Especialidades**: Áreas de atuação médicas, como Cardiologia, Ortopedia, etc.
-- **Profissionais**: Profissionais de saúde vinculados a uma especialidade, contendo registro do conselho (CRM, COREN) e informações de turno.
-- **Atendimentos**: O ponto de encontro onde o sistema cruza um Paciente e um Profissional para realizar uma consulta, exame ou internação.
+- **Autenticação e Autorização (RBAC):** Sistema de login utilizando Spring Security e JWT. Existem diferentes papéis (Admin, Profissional, Paciente) que controlam o acesso aos endpoints e aos dados.
+- **Sincronização em Tempo Real (WebSockets):** Uso de STOMP sobre WebSockets para enviar notificações ao vivo para o frontend (ex: notificar o paciente imediatamente quando a consulta for atualizada ou finalizada pelo médico).
+- **Soft Delete Persistente:** Implementação de remoção lógica (`visivelPaciente`, `visivelProfissional`). A exclusão de um registro de consulta por uma das partes não afeta o histórico de visualização da outra parte.
+- **Fluxo de Impressão:** Processamento de requisições preparadas para geração e impressão de relatórios e comprovantes médicos no frontend.
 
 ---
 
@@ -38,11 +39,11 @@ O sistema é focado em 4 entidades principais:
 1. **Clone o repositório:**
    ```bash
    git clone https://github.com/LeoBorges04/TrabalhoLucas.git
-   cd TrabalhoLucas
+   cd TrabalhoLucas/backend
    ```
 
 2. **Ajuste as Variáveis de Ambiente:**
-   No arquivo `src/main/resources/application.properties`, você encontrará as conexões de banco de dados. Caso deseje rodar o banco localmente ou em outra instância, altere as variáveis:
+   No arquivo `src/main/resources/application.properties`, você encontrará as conexões de banco de dados e configurações de JWT. Caso deseje rodar o banco localmente ou em outra instância, altere as variáveis:
    ```properties
    spring.datasource.url=jdbc:postgresql://<SEU_HOST>:5432/<NOME_DB>
    spring.datasource.username=<SEU_USER>
@@ -70,9 +71,21 @@ O sistema é focado em 4 entidades principais:
 
 ## 📚 Exemplos de Uso da API
 
-Abaixo estão alguns exemplos práticos de como consumir a API RESTful. Você pode testar essas rotas usando Postman, Insomnia, ou cURL. A base URL da aplicação é `http://localhost:8080`.
+*Nota: A maioria dos endpoints agora requer o envio de um token JWT válido no cabeçalho da requisição (`Authorization: Bearer <SEU_TOKEN>`).*
 
-### 1. Pacientes
+### 1. Autenticação
+
+- **Login**
+  - **Método:** `POST /api/auth/login`
+  - **Body (JSON):**
+    ```json
+    {
+      "email": "admin@medcore.com",
+      "senha": "sua_senha"
+    }
+    ```
+
+### 2. Pacientes
 
 - **Criar Paciente**
   - **Método:** `POST /api/pacientes`
@@ -93,19 +106,6 @@ Abaixo estão alguns exemplos práticos de como consumir a API RESTful. Você po
 
 - **Listar Pacientes Ativos**
   - **Método:** `GET /api/pacientes/ativos`
-
-### 2. Especialidades
-
-- **Criar Especialidade**
-  - **Método:** `POST /api/especialidades`
-  - **Body (JSON):**
-    ```json
-    {
-      "nome": "Cardiologia",
-      "descricao": "Especialidade focada no coração",
-      "area": "Clínica Geral"
-    }
-    ```
 
 ### 3. Profissionais
 
@@ -144,5 +144,3 @@ Abaixo estão alguns exemplos práticos de como consumir a API RESTful. Você po
 - **Listar Atendimentos Filtrados por Data**
   - **Método:** `GET /api/atendimentos?data=2026-06-01`
   - **Descrição:** Retorna todos os atendimentos agendados para o dia 01/06/2026.
-
----
